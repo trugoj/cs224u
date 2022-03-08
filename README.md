@@ -12,3 +12,7 @@ prodigy ner.manual ner_grund blank:de ./grund.jsonl --label ORT,VERKAEUFER,KAEUF
 ## output annotations to ./annotations.jsonl
 
 prodigy db-out ner_grund > ./annotations.jsonl
+
+## visualize data
+
+streamlit run visualize_data.py annotations.jsonl
