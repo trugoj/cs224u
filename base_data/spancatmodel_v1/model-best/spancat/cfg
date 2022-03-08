@@ -1,0 +1,18 @@
+{
+  "labels":[
+    "ORT",
+    "STRASSE",
+    "IMMO_TYP",
+    "FLAECHE",
+    "GESAMTPREIS",
+    "TERRASSENGROESSE",
+    "KAEUFER",
+    "VERKAEUFER",
+    "QMPREIS",
+    "DATUM_VERTRAG",
+    "DATUM_VERBUECHERUNG"
+  ],
+  "spans_key":"sc",
+  "threshold":0.5,
+  "max_positive":null
+}
