@@ -1,1 +1,1 @@
-{"label": "GESAMTPREIS", "pattern": [ {"TEXT": {"REGEX": "^(\d\.?)?(\d{3}\.?\d{3})?$"}}  ]}
+{"label": "GESAMTPREIS", "pattern":[{"TEXT": {"REGEX":"^(\\d\\.?)?(\\d{3}\\.?\\d{3})?$"}}]}
