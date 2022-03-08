@@ -1,0 +1,9 @@
+  - name: "visualize-data"
+    help: "Explore the annotated data in an interactive Streamlit app"
+    script:
+      - "streamlit run visualize_data.py assets/${vars.train}.jsonl,assets/${vars.dev}.jsonl"
+    deps:
+      - "./visualize_data.py"
+      - "assets/${vars.train}.jsonl"
+#      - "assets/${vars.train}.jsonl"
+#      - "assets/${vars.dev}.jsonl"
