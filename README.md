@@ -16,3 +16,13 @@ prodigy db-out ner_grund > ./annotations.jsonl
 ## visualize data
 
 streamlit run visualize_data.py annotations.jsonl
+
+
+## instructions for vasco
+
+ssh -p 2222 vasco@185.67.174.74 -L -L 9999:192.168.1.100:8154
+[enter password]
+conda activate nlu
+cd cs224u
+cd base_data
+streamlit run visualize_data.py annotations.jsonl
