@@ -29,3 +29,4 @@ streamlit run visualize_data.py annotations.jsonl
 ssh -p 2222 vasco@185.67.174.74 -L 8000:192.168.1.100:8080
 (next 4 steps as for Streamlit above)
 prodigy spans.manual spans_grund_base blank:de ./grund.jsonl --label ORT,VERKAEUFER,KAEUFER,GESAMTPREIS,FLAECHE,STRASSE,DATUM_VERTRAG,DATUM_VERBUECHERUNG,IMMO_TYP,QMPREIS,TERRASSENGROESSE --patterns ./pattern_ort.jsonl
+(outputs prodigy onto local PC port 8000 – can access via Browser in http://localhost:8000)
