@@ -1,5 +1,4 @@
 # *gNER* project notes
-
 Useful links:
 - Markdown [cheat sheet](https://www.markdownguide.org/cheat-sheet)
 - Repository [README.md](https://github.com/trugoj/cs224u#readme) file
