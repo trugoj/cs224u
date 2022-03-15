@@ -8,6 +8,9 @@ Useful links:
 (Reprioritize every now and then)
 - Read in data
 - Inpsect data
+- Downgrade scikit-learn version to <0.24:
+ - https://stackoverflow.com/questions/66059532/attributeerror-crf-object-has-no-attribute-keep-tempfiles
+ - https://github.com/TeamHG-Memex/sklearn-crfsuite/issues/60
 - Make random baseline
 - Make CRF model
 - Make TorchRNNSequenceLabeler model
