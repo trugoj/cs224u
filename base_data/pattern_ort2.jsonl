@@ -1,6 +1,7 @@
 {"label": "ORT", "pattern": [{"lower": "alberschwende"}]}
 {"label": "ORT", "pattern": [{"lower": "altach"}]}
 {"label": "ORT", "pattern": [{"lower": "andelsbuch"}]}
+{"label": "ORT", "pattern": [{"lower": "anton"}]}
 {"label": "ORT", "pattern": [{"lower": "au"}]}
 {"label": "ORT", "pattern": [{"lower": "bartholom\u00e4berg"}]}
 {"label": "ORT", "pattern": [{"lower": "bezau"}]}
@@ -10,6 +11,7 @@
 {"label": "ORT", "pattern": [{"lower": "bludenz"}]}
 {"label": "ORT", "pattern": [{"lower": "bludesch"}]}
 {"label": "ORT", "pattern": [{"lower": "brand"}]}
+{"label": "ORT", "pattern": [{"lower": "bregenz"}]}
 {"label": "ORT", "pattern": [{"lower": "bregenz"}]}
 {"label": "ORT", "pattern": [{"lower": "buch"}]}
 {"label": "ORT", "pattern": [{"lower": "b\u00fcrs"}]}
@@ -29,7 +31,9 @@
 {"label": "ORT", "pattern": [{"lower": "fu\u00dfach"}]}
 {"label": "ORT", "pattern": [{"lower": "gai\u00dfau"}]}
 {"label": "ORT", "pattern": [{"lower": "gaissau"}]}
+{"label": "ORT", "pattern": [{"lower": "gallenkirch"}]}
 {"label": "ORT", "pattern": [{"lower": "gaschurn"}]}
+{"label": "ORT", "pattern": [{"lower": "gerold"}]}
 {"label": "ORT", "pattern": [{"lower": "g\u00f6fis"}]}
 {"label": "ORT", "pattern": [{"lower": "g\u00f6tzis"}]}
 {"label": "ORT", "pattern": [{"lower": "hard"}]}
@@ -40,6 +44,7 @@
 {"label": "ORT", "pattern": [{"lower": "h\u00f6rbranz"}]}
 {"label": "ORT", "pattern": [{"lower": "innerbraz"}]}
 {"label": "ORT", "pattern": [{"lower": "kennelbach"}]}
+{"label": "ORT", "pattern": [{"lower": "klaus"}]}
 {"label": "ORT", "pattern": [{"lower": "klaus"}]}
 {"label": "ORT", "pattern": [{"lower": "klaus-weiler"}]}
 {"label": "ORT", "pattern": [{"lower": "kl\u00f6sterle"}]}
@@ -60,6 +65,7 @@
 {"label": "ORT", "pattern": [{"lower": "mellau"}]}
 {"label": "ORT", "pattern": [{"lower": "mittelberg"}]}
 {"label": "ORT", "pattern": [{"lower": "m\u00f6ggers"}]}
+{"label": "ORT", "pattern": [{"lower": "montafon"}]}
 {"label": "ORT", "pattern": [{"lower": "nenzing"}]}
 {"label": "ORT", "pattern": [{"lower": "n\u00fcziders"}]}
 {"label": "ORT", "pattern": [{"lower": "raggal"}]}
