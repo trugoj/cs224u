@@ -343,7 +343,8 @@ class TorchRNNClassifier(TorchModelBase):
         if y is None:
             return TorchRNNDataset(X, seq_lengths)
         else:
-            self.classes_ = sorted(set(y))
+            self.classes_ = sorted(set(y)) # note: TorchRNNClassifier assumes y is a list (not a list of lists like in NER)
+                                            # i.e. 1 classification per example
             self.n_classes_ = len(self.classes_)
             class2index = dict(zip(self.classes_, range(self.n_classes_)))
             y = [class2index[label] for label in y]
