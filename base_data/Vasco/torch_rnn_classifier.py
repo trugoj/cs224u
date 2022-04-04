@@ -109,6 +109,7 @@ class TorchRNNModel(nn.Module):
 
         """
         super().__init__()
+        print("here01")
         self.vocab_size = vocab_size
         self.use_embedding = use_embedding
         self.embed_dim = embed_dim
@@ -128,6 +129,9 @@ class TorchRNNModel(nn.Module):
 
     def forward(self, X, seq_lengths):
         if self.use_embedding:
+            #print(type(X))
+            #print(X.shape)
+            print("here21")
             X = self.embedding(X)
         embs = torch.nn.utils.rnn.pack_padded_sequence( #Packs a Tensor containing padded sequences of variable length
             X,
@@ -339,14 +343,15 @@ class TorchRNNClassifier(TorchModelBase):
         TorchRNNDataset
 
         """
-        X, seq_lengths = self._prepare_sequences(X)
+        X, seq_lengths = self._prepare_sequences(X) # this is where X is converted from list of tokens into list of indices
         if y is None:
             return TorchRNNDataset(X, seq_lengths)
         else:
-            self.classes_ = sorted(set(y))
+            self.classes_ = sorted(set(y)) # note: TorchRNNClassifier assumes y is a list (not a list of lists like in NER)
+                                            # i.e. 1 classification per example
             self.n_classes_ = len(self.classes_)
-            class2index = dict(zip(self.classes_, range(self.n_classes_)))
-            y = [class2index[label] for label in y]
+            class2index = dict(zip(self.classes_, range(self.n_classes_))) # creates dict w/ label, index pairs, e.g. a=['a','b'] dict(zip(a, range(2)))
+            y = [class2index[label] for label in y] # converts labels to indices
             return TorchRNNDataset(X, seq_lengths, y)
 
     def _prepare_sequences(self, X):
@@ -369,6 +374,7 @@ class TorchRNNClassifier(TorchModelBase):
         if self.use_embedding:
             new_X = []
             seq_lengths = []
+           # print(X)
             index = dict(zip(self.vocab, range(len(self.vocab))))
             unk_index = index['$UNK']
             for ex in X:
@@ -434,7 +440,7 @@ class TorchRNNClassifier(TorchModelBase):
             Each row of this matrix will sum to 1.0.
 
         """
-        preds = self._predict(X, device=device)
+        preds = self._predict(X, device=device) # base class does the heavy-lifting
         probs = torch.softmax(preds, dim=1).cpu().numpy()
         return probs
 
