@@ -318,6 +318,7 @@ class TorchModelBase:
         self
 
         """
+        print("here00")
         if self.early_stopping:
             args, dev = self._build_validation_split(
                 *args, validation_fraction=self.validation_fraction)
@@ -351,11 +352,14 @@ class TorchModelBase:
             epoch_error = 0.0
 
             for batch_num, batch in enumerate(dataloader, start=1):
+                print("batch"+str(batch_num)) ########################################
 
                 batch = [x.to(self.device, non_blocking=True) for x in batch]
 
-                X_batch = batch[: -1]
-                y_batch = batch[-1]
+                X_batch = batch[: -1] # list w/ 2 els: 1st el is tensor (108xmaxLen) w/ tokens for each example in batch; 2nd el is (108x1) with lengths of each example
+                y_batch = batch[-1] # list with each element of this batch (108 el in list) with tensor (maxLen x 1) labels converted to ints and w/ len = maxLen of all example sequences # print(y_batch[0].shape)
+                # print(X_batch[0].shape)
+                
 
                 batch_preds = self.model(*X_batch)
 
