@@ -370,7 +370,7 @@ class TorchModelBase:
                # print(y_batch.shape)
                # print(batch_preds.shape)
 
-                err = self.loss(batch_preds, y_batch) # batch_preds = (108,12,117); y_batch = (108,117)
+                err = self.loss(batch_preds, y_batch) # batch_preds = (108,12,117); y_batch = (108,117); goal is minimize error
 
                 if self.gradient_accumulation_steps > 1 and \
                   self.loss.reduction == "mean":
@@ -485,7 +485,7 @@ class TorchModelBase:
 
     def _update_no_improvement_count_early_stopping(self, *dev):
         """
-        Internal method used by `fit` to control early stopping.
+        Internal method used by `fit` to control early stopping. # NOTE: are trying to max score (e.g. avg f1 score)
         The method uses `self.score(*dev)` for scoring and updates
         `self.validation_scores`, `self.no_improvement_count`,
         `self.best_score`, `self.best_parameters` as appropriate.
