@@ -109,7 +109,7 @@ class TorchRNNModel(nn.Module):
 
         """
         super().__init__()
-        print("here01")
+      #  print("here01")
         self.vocab_size = vocab_size
         self.use_embedding = use_embedding
         self.embed_dim = embed_dim
@@ -131,7 +131,7 @@ class TorchRNNModel(nn.Module):
         if self.use_embedding:
             #print(type(X))
             #print(X.shape)
-            print("here21")
+           # print("here21")
             X = self.embedding(X)
         embs = torch.nn.utils.rnn.pack_padded_sequence( #Packs a Tensor containing padded sequences of variable length
             X,
