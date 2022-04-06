@@ -1,5 +1,4 @@
 # https://docs.python.org/3/tutorial/modules.html#packages
-
 import numpy as np
 from sklearn.metrics import ConfusionMatrixDisplay
 import matplotlib.pyplot as plt
@@ -44,6 +43,9 @@ def make_confusion_matrix(y_true, y_pred, labels, percentage=True, plot=True, si
     cmd.plot(ax=ax, xticks_rotation="vertical", values_format=values_format)
     pass
 
+# https://github.com/chakki-works/seqeval
+from seqeval.scheme import IOB2
+from seqeval.metrics import f1_score
 
-
-
+def f1_strict_IOB2(y_true, y_pred):
+    return f1_score(y_true, y_pred, mode="strict", scheme=IOB2)
