@@ -101,7 +101,7 @@ class TorchModelBase:
             if the epoch error doesn't drop by at least `self.tol` after
             this many epochs.
 
-        tol: float
+        f: float
             Value used to control `early_stopping` and convergence.
 
         device: str or None
@@ -318,7 +318,6 @@ class TorchModelBase:
         self
 
         """
-        print("here00")
         if self.early_stopping:
             args, dev = self._build_validation_split(
                 *args, validation_fraction=self.validation_fraction)
@@ -352,25 +351,15 @@ class TorchModelBase:
             epoch_error = 0.0
 
             for batch_num, batch in enumerate(dataloader, start=1):
-                print("batch"+str(batch_num)) ########################################
 
-               # print(batch)
                 batch = [x.to(self.device, non_blocking=True) for x in batch]
 
-                X_batch = batch[: -1] # list w/ 2 els: 1st el is tensor (108xmaxLen) w/ tokens for each example in batch; 2nd el is (108x1) with lengths of each example
-                y_batch = batch[-1] # list with each element of this batch (108 el in list) with tensor (maxLen x 1) labels converted to ints and w/ len = maxLen of all example sequences # print(y_batch[0].shape)
-               # print("X_batch")
-               # print(X_batch[0].shape)
-               # print(y_batch[0])
-               
-                print("here-model")
-                batch_preds = self.model(*X_batch)
-               # print("batch_preds")
-                #print(len(batch_preds))
-               # print(y_batch.shape)
-               # print(batch_preds.shape)
+                X_batch = batch[: -1]
+                y_batch = batch[-1]
 
-                err = self.loss(batch_preds, y_batch) # batch_preds = (108,12,117); y_batch = (108,117); goal is minimize error
+                batch_preds = self.model(*X_batch)
+
+                err = self.loss(batch_preds, y_batch)
 
                 if self.gradient_accumulation_steps > 1 and \
                   self.loss.reduction == "mean":
@@ -485,7 +474,7 @@ class TorchModelBase:
 
     def _update_no_improvement_count_early_stopping(self, *dev):
         """
-        Internal method used by `fit` to control early stopping. # NOTE: are trying to max score (e.g. avg f1 score)
+        Internal method used by `fit` to control early stopping.
         The method uses `self.score(*dev)` for scoring and updates
         `self.validation_scores`, `self.no_improvement_count`,
         `self.best_score`, `self.best_parameters` as appropriate.
