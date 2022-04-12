@@ -1,0 +1,88 @@
+\begin{thebibliography}{10}
+\expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
+
+\bibitem[{Barbaresi(2021)}]{barbaresi-2021-trafilatura}
+Adrien Barbaresi. 2021.
+\newblock \href {https://doi.org/10.18653/v1/2021.acl-demo.15} {Trafilatura:
+  {A} web scraping library and command-line tool for text discovery and
+  extraction}.
+\newblock In \emph{Proceedings of the 59th Annual Meeting of the Association
+  for Computational Linguistics and the 11th International Joint Conference on
+  Natural Language Processing: System Demonstrations}, pages 122--131, Online.
+  Association for Computational Linguistics.
+
+\bibitem[{Branden~Chan(2020)}]{Chan-2020}
+Timo~Möller Branden~Chan, Stefan~Schweter. 2020.
+\newblock \href {https://arxiv.org/abs/2010.10906} {German's next language
+  model}.
+\newblock \emph{Accepted by COLING2020}, arXiv:2010.10906.
+\newblock Version 4.
+
+\bibitem[{Huang et~al.(2015)Huang, Xu, and Yu}]{DBLP:journals/corr/HuangXY15}
+Zhiheng Huang, Wei Xu, and Kai Yu. 2015.
+\newblock \href {http://arxiv.org/abs/1508.01991} {Bidirectional {LSTM-CRF}
+  models for sequence tagging}.
+\newblock \emph{CoRR}, abs/1508.01991.
+
+\bibitem[{Lample et~al.(2016)Lample, Ballesteros, Subramanian, Kawakami, and
+  Dyer}]{lample-etal-2016-neural}
+Guillaume Lample, Miguel Ballesteros, Sandeep Subramanian, Kazuya Kawakami, and
+  Chris Dyer. 2016.
+\newblock \href {https://doi.org/10.18653/v1/N16-1030} {Neural architectures
+  for named entity recognition}.
+\newblock In \emph{Proceedings of the 2016 Conference of the North {A}merican
+  Chapter of the Association for Computational Linguistics: Human Language
+  Technologies}, pages 260--270, San Diego, California. Association for
+  Computational Linguistics.
+
+\bibitem[{Li et~al.(2020)Li, Sun, Meng, Liang, Wu, and Li}]{li-etal-2020-dice}
+Xiaoya Li, Xiaofei Sun, Yuxian Meng, Junjun Liang, Fei Wu, and Jiwei Li. 2020.
+\newblock \href {https://doi.org/10.18653/v1/2020.acl-main.45} {Dice loss for
+  data-imbalanced {NLP} tasks}.
+\newblock In \emph{Proceedings of the 58th Annual Meeting of the Association
+  for Computational Linguistics}, pages 465--476, Online. Association for
+  Computational Linguistics.
+
+\bibitem[{Luo et~al.(2019)Luo, Xiao, and
+  Zhao}]{DBLP:journals/corr/abs-1911-02257}
+Ying Luo, Fengshun Xiao, and Hai Zhao. 2019.
+\newblock \href {http://arxiv.org/abs/1911.02257} {Hierarchical contextualized
+  representation for named entity recognition}.
+\newblock \emph{CoRR}, abs/1911.02257.
+
+\bibitem[{Rush(2018)}]{rush-2018-annotated}
+Alexander Rush. 2018.
+\newblock \href {https://doi.org/10.18653/v1/W18-2509} {The annotated
+  transformer}.
+\newblock In \emph{Proceedings of Workshop for {NLP} Open Source Software
+  ({NLP}-{OSS})}, pages 52--60, Melbourne, Australia. Association for
+  Computational Linguistics.
+
+\bibitem[{Vaswani et~al.(2017)Vaswani, Shazeer, Parmar, Uszkoreit, Jones,
+  Gomez, Kaiser, and Polosukhin}]{NIPS2017_3f5ee243}
+Ashish Vaswani, Noam Shazeer, Niki Parmar, Jakob Uszkoreit, Llion Jones,
+  Aidan~N Gomez, \L~ukasz Kaiser, and Illia Polosukhin. 2017.
+\newblock \href
+  {https://proceedings.neurips.cc/paper/2017/file/3f5ee243547dee91fbd053c1c4a845aa-Paper.pdf}
+  {Attention is all you need}.
+\newblock In \emph{Advances in Neural Information Processing Systems},
+  volume~30. Curran Associates, Inc.
+
+\bibitem[{Yadav and Bethard(2018)}]{yadav-bethard-2018-survey}
+Vikas Yadav and Steven Bethard. 2018.
+\newblock \href {https://aclanthology.org/C18-1182} {A survey on recent
+  advances in named entity recognition from deep learning models}.
+\newblock In \emph{Proceedings of the 27th International Conference on
+  Computational Linguistics}, pages 2145--2158, Santa Fe, New Mexico, USA.
+  Association for Computational Linguistics.
+
+\bibitem[{Yang and Katiyar(2020)}]{yang-katiyar-2020-simple}
+Yi~Yang and Arzoo Katiyar. 2020.
+\newblock \href {https://doi.org/10.18653/v1/2020.emnlp-main.516} {Simple and
+  effective few-shot named entity recognition with structured nearest neighbor
+  learning}.
+\newblock In \emph{Proceedings of the 2020 Conference on Empirical Methods in
+  Natural Language Processing (EMNLP)}, pages 6365--6375, Online. Association
+  for Computational Linguistics.
+
+\end{thebibliography}

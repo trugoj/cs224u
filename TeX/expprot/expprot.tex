@@ -1,0 +1,124 @@
+% This must be in the first 5 lines to tell arXiv to use pdfLaTeX, which is strongly recommended:
+% This must be in the first 5 lines to tell arXiv to use pdfLaTeX, which is strongly recommended:
+% (In particular, the hyperref package requires pdfLaTeX in order to break URLs across lines.)
+\pdfoutput=1
+% Define document class:
+\documentclass[11pt]{article}
+% Drop the "[review]" option to generate the final version:
+%\usepackage[review]{acl2021}
+%\usepackage{acl2021}
+\usepackage{acl2021}
+% Include standard packages:
+\usepackage{times}
+\usepackage{latexsym}
+% For proper rendering and hyphenation of words containing Latin characters (including in bib files):
+\usepackage[T1]{fontenc}
+% This assumes UTF8 encoding:
+\usepackage[utf8]{inputenc}
+% This is not strictly necessary, and may be commented out, but it will improve the layout of the manuscript, and will typically save some space:
+\usepackage{microtype}
+% If the title and author information does not fit in the area allocated, uncomment the following and set <dim> to 5cm or larger:
+%\setlength\titlebox{<dim>}
+\title{Experimental Protocol for XCS224U Project \emph{gNER}}
+% Author information can be set in various styles:
+% (i) a) For several authors from the same institution:
+% \author{Author 1 \and ... \and Author n \\
+%         Address line \\ ... \\ Address line}
+% (i) b) if the names do not fit well on one line use
+%         Author 1 \\ {\bf Author 2} \\ ... \\ {\bf Author n} \\
+% (ii) For authors from different institutions:
+% \author{Author 1 \\ Address line \\  ... \\ Address line
+%         \And  ... \And
+%         Author n \\ Address line \\ ... \\ Address line}
+%  (iii) To start a seperate ``row'' of authors use \AND, as in
+% \author{Author 1 \\ Address line \\  ... \\ Address line
+%         \AND
+%         Author 2 \\ Address line \\ ... \\ Address line \And
+%         Author 3 \\ Address line \\ ... \\ Address line}
+\author{
+	Matthias Droth\\
+	matthias.droth@gmail.com
+	\And
+	Martin Nigsch\\
+	martin@nigsch.eu
+	\And
+	Vasco Ribeiro\\
+	vascosousaribeiro@yahoo.com
+}
+
+% DOCUMENT START
+\begin{document}
+\maketitle
+
+%% ABSTRACT
+\begin{abstract}
+This document provides an overview over what we are trying to achieve with our xcs224u project \emph{gNER}, how we intend to achieve it, what data we plan to use, and what models we are going to implement. We also clarify our motivation, progress, remaining tasks, and challenges we foresee.
+\end{abstract}
+
+% Hypotheses
+\section{Hypotheses}
+We hypothesize that conditional random fields (CRF) algorithms \citep{laffertyCrf, mccallum-li-2003-early, MAL-013} perform on par with deep learning algorithms when trained only on a relatively small named entity recognition (NER) dataset. We hypothesize that recurrent neural networks (RNNs) \citep{Tutschku95recurrentmultilayer, hochreiter1997long} and transformers \citep{NIPS2017_3f5ee243, rush-2018-annotated, devlin-etal-2019-bert} outperform CRF when grounding on a large dataset is included before retraining on the small target dataset.
+
+% Datasets
+\section{Datasets}
+We plan to employ two main datasets:
+\begin{enumerate}
+    \item A relatively small \href{https://github.com/trugoj/cs224u/blob/main/base_data/annotations.jsonl}{target dataset} of \emph{NER-annotated} real estate offerings in Austria. The labels in this dataset have been obtained by applying \href{https://prodi.gy/}{prodigy}'s NER annotation tool to a small fraction of a roughly 25 times larger \href{https://raw.githubusercontent.com/trugoj/cs224u/main/base_data/data.jsonl}{corpus} of unlabeled real estate offerings. As a consequence, the target dataset can be enhanced to as many fully labeled instances as in the corpus.
+    \item The German language dataset of \href{https://github.com/google-research-datasets/paws}{PAWS-X} by \citet{pawsx2019emnlp} for grounding.
+\end{enumerate}
+
+
+% Metrics
+\section{Metrics}
+A single real score in $\left[0,\,1\right]$ is useful for unambiguous ranking of models. We are going to balance precision and recall by using an $F_{\beta}$ score. The averaging over different classes shall take the support of each class into account. This allows us to compare our different models and in particular, to determine whether deep learning models for \emph{gNER} benefit from grounding on a large dataset. 
+\par
+In order to convey a rich picture of model performance, we will go beyond singular scores and also show confusion matrices and receiver operating characteristic (ROC) curves.
+\par
+We also want to point out that not only the model architecture but also the cost function used for calculating gradients during training impacts the performance as different losses tend to have different biases towards a given metric \citep{li-etal-2020-dice}. Since \href{https://sklearn-crfsuite.readthedocs.io/en/latest/}{sklearn-crfsuite} inherits from \href{https://scikit-learn.org/0.23/}{scikit-learn}, which only allows changing the loss function by \href{https://stackoverflow.com/questions/54267745/implementing-custom-loss-function-in-scikit-learn}{modifying} the library's source code, we refrain from exploring this approach for CRFs but intend to do so for RNNs or transformers.
+
+% Models
+\section{Models}\label{models}
+A description of the models that you'll be using as baselines, and a preliminary description of the model or models that will be the focus of your investigation.
+\par
+As an overall baseline, we use a custom model that always predicts the most common label in the training data, as motivated by the lecture \emph{Simple baselines} in module 8 of xcs224u.  
+\par
+In order to test our hypothesis, we need to implement CRF-, RNN-, and transformer-based models. For each of these model classes we will use a very basic but properly implemented version as a baseline, each of which we expect to be at least on par with the overall baseline. Then, we will try to increase the performance in each model class by tweaking the cost function as well as other hyperparameters and by grounding.
+
+% General reasoning
+\section{General reasoning}
+%An explanation of how the data and models come together to inform your core hypothesis or hypotheses.
+
+Due to the larger number of trainable parameters deep models like deep RNNs and transformers are capable of encoding more complicated relations than shallow models like CRFs. To avoid overfitting, deep models typically require large amounts of training data. Since our target dataset consists of only 140 fully labeled sequences, deep RNNs and transformers are likely to overfit on training data and might fail to outperform CRFs on unseen data.
+\par
+Adding grounding on a large dataset as a pretraining step allows \emph{deep models in particular} to encode the relations of natural language better. Therefore, we expect that grounding will boost performance of deep RNNs and transformers beyond the performance of CRFs.
+
+% Summary of progress so far
+\section{Summary of progress so far}
+What we have done:
+\begin{itemize}
+    \item We have built a corpus of text data by scraping a newspaper website for information on concluded real estate transactions. This resulted in some 3,400 short texts, 140 of which we have already been fully annotated. Annotation followed a hybrid strategy with recourse to gazetteers (e.g. for the self-contained set of distinct towns in the Voralberg region of Austria), regex (e.g. the numerical price "gesamtpreis" field) and manual annotation (using a third-party package called \href{https://prodi.gy/}{prodigy}).
+    \item We have implemented an overall baseline (see Sec.~\ref{models}) in the form of a model that always predicts the most prominent class in the training data. Its class support averaged $F_1$ score on the test fraction of our dataset is $0.716$.
+    \item We have also implemented a specific baseline for CRF models where we approach our problem as a typical Named-Entity Recognition problem with the model being tasked with learning parameters for label-observation features in addition to label-label transitions and label-word emissions. Its class support averaged $F_1$ score on the test fraction of our dataset is $0.914$.
+    \item Finally, we have also attempted to find the best version of the CRF model class by searching the hyperparameter space with scikit-learn's \emph{RandomizedSearchCV} class. The best model candidate has been refitted on the entire training data. Its class support averaged $F_1$ score on the test fraction of our dataset is $0.972$.
+\end{itemize}
+What we still have to do:
+\begin{itemize}
+    \item We still need to implement dedicated baselines for deep RNNs and for transformers.
+    \item Omitting grounding, we still need to find the best version of a specific deep RNN model class (e.g. LSTM) as well as the best version of a specific transformer model class (e.g. BERT).
+    \item We still need to explore the \href{https://github.com/google-research-datasets/paws}{PAWS-X} dataset and use if for grounding our deep RNN and transformer models. 
+    \item As for metrics, we still need to show confusion matrices and receiver operating characteristic curves.
+    \item We would also like to explore the interplay of loss functions and metrics.
+\end{itemize}
+Obstacles or concerns that might prevent our project from coming to fruition:
+\begin{itemize}
+    \item The German language dataset of \href{https://github.com/google-research-datasets/paws}{PAWS-X} is relatively large. Grounding a transformer on this dataset might slow down our development process significantly.
+    \item The German language dataset of \href{https://github.com/google-research-datasets/paws}{PAWS-X} might not provide the right kind of grounding and consequently fail to improve performance on our task.
+\end{itemize}
+% ACKNOWLEDGEMENTS
+%\section*{Acknowledgements}
+%We acknowledge the awesomeness of xcs224u.
+% BIBLIOGRAPHY
+\bibliography{custom}
+
+% DOCUMENT END
+\end{document}

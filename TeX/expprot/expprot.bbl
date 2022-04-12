@@ -1,0 +1,79 @@
+\begin{thebibliography}{10}
+\expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
+
+\bibitem[{Devlin et~al.(2019)Devlin, Chang, Lee, and
+  Toutanova}]{devlin-etal-2019-bert}
+Jacob Devlin, Ming-Wei Chang, Kenton Lee, and Kristina Toutanova. 2019.
+\newblock \href {https://doi.org/10.18653/v1/N19-1423} {{BERT}: Pre-training of
+  deep bidirectional transformers for language understanding}.
+\newblock In \emph{Proceedings of the 2019 Conference of the North {A}merican
+  Chapter of the Association for Computational Linguistics: Human Language
+  Technologies, Volume 1 (Long and Short Papers)}, pages 4171--4186,
+  Minneapolis, Minnesota. Association for Computational Linguistics.
+
+\bibitem[{Hochreiter and Schmidhuber(1997)}]{hochreiter1997long}
+Sepp Hochreiter and J{\"u}rgen Schmidhuber. 1997.
+\newblock Long short-term memory.
+\newblock \emph{Neural computation}, 9(8):1735--1780.
+
+\bibitem[{Lafferty et~al.(2001)Lafferty, McCallum, and Pereira}]{laffertyCrf}
+John~D. Lafferty, Andrew McCallum, and Fernando C.~N. Pereira. 2001.
+\newblock \href {http://dl.acm.org/citation.cfm?id=645530.655813} {Conditional
+  random fields: Probabilistic models for segmenting and labeling sequence
+  data}.
+\newblock In \emph{Proceedings of the Eighteenth International Conference on
+  Machine Learning}, ICML '01, pages 282--289, San Francisco, CA, USA. Morgan
+  Kaufmann Publishers Inc.
+
+\bibitem[{Li et~al.(2020)Li, Sun, Meng, Liang, Wu, and Li}]{li-etal-2020-dice}
+Xiaoya Li, Xiaofei Sun, Yuxian Meng, Junjun Liang, Fei Wu, and Jiwei Li. 2020.
+\newblock \href {https://doi.org/10.18653/v1/2020.acl-main.45} {Dice loss for
+  data-imbalanced {NLP} tasks}.
+\newblock In \emph{Proceedings of the 58th Annual Meeting of the Association
+  for Computational Linguistics}, pages 465--476, Online. Association for
+  Computational Linguistics.
+
+\bibitem[{McCallum and Li(2003)}]{mccallum-li-2003-early}
+Andrew McCallum and Wei Li. 2003.
+\newblock \href {https://aclanthology.org/W03-0430} {Early results for named
+  entity recognition with conditional random fields, feature induction and
+  web-enhanced lexicons}.
+\newblock In \emph{Proceedings of the Seventh Conference on Natural Language
+  Learning at {HLT}-{NAACL} 2003}, pages 188--191.
+
+\bibitem[{Rush(2018)}]{rush-2018-annotated}
+Alexander Rush. 2018.
+\newblock \href {https://doi.org/10.18653/v1/W18-2509} {The annotated
+  transformer}.
+\newblock In \emph{Proceedings of Workshop for {NLP} Open Source Software
+  ({NLP}-{OSS})}, pages 52--60, Melbourne, Australia. Association for
+  Computational Linguistics.
+
+\bibitem[{Sutton and McCallum(2012)}]{MAL-013}
+Charles Sutton and Andrew McCallum. 2012.
+\newblock \href {https://doi.org/10.1561/2200000013} {An introduction to
+  conditional random fields}.
+\newblock \emph{Foundations and Trends® in Machine Learning}, 4(4):267--373.
+
+\bibitem[{Tutschku(1995)}]{Tutschku95recurrentmultilayer}
+K.~Tutschku. 1995.
+\newblock Recurrent multilayer perceptrons for identification and control: The
+  road to applications.
+
+\bibitem[{Vaswani et~al.(2017)Vaswani, Shazeer, Parmar, Uszkoreit, Jones,
+  Gomez, Kaiser, and Polosukhin}]{NIPS2017_3f5ee243}
+Ashish Vaswani, Noam Shazeer, Niki Parmar, Jakob Uszkoreit, Llion Jones,
+  Aidan~N Gomez, \L~ukasz Kaiser, and Illia Polosukhin. 2017.
+\newblock \href
+  {https://proceedings.neurips.cc/paper/2017/file/3f5ee243547dee91fbd053c1c4a845aa-Paper.pdf}
+  {Attention is all you need}.
+\newblock In \emph{Advances in Neural Information Processing Systems},
+  volume~30. Curran Associates, Inc.
+
+\bibitem[{Yang et~al.(2019)Yang, Zhang, Tar, and Baldridge}]{pawsx2019emnlp}
+Yinfei Yang, Yuan Zhang, Chris Tar, and Jason Baldridge. 2019.
+\newblock {PAWS-X: A Cross-lingual Adversarial Dataset for Paraphrase
+  Identification}.
+\newblock In \emph{Proc. of EMNLP}.
+
+\end{thebibliography}
