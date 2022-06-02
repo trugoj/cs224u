@@ -1,5 +1,5 @@
 {
-  "best_metric": 1.0054073333740234,
+  "best_metric": 0.6677064895629883,
   "best_model_checkpoint": "gNER_bert-base-cased/checkpoint-10",
   "epoch": 1.0,
   "global_step": 10,
@@ -9,16 +9,16 @@
   "log_history": [
     {
       "epoch": 1.0,
-      "eval_F1 macro": 0.08045988527777277,
-      "eval_loss": 1.0054073333740234,
-      "eval_runtime": 35.9448,
-      "eval_samples_per_second": 0.723,
-      "eval_steps_per_second": 0.111,
+      "eval_F1 macro": 0.48924259388108277,
+      "eval_loss": 0.6677064895629883,
+      "eval_runtime": 0.1844,
+      "eval_samples_per_second": 141.005,
+      "eval_steps_per_second": 21.693,
       "step": 10
     }
   ],
-  "max_steps": 10,
-  "num_train_epochs": 1,
+  "max_steps": 150,
+  "num_train_epochs": 15,
   "total_flos": 8669507776848.0,
   "trial_name": null,
   "trial_params": null
